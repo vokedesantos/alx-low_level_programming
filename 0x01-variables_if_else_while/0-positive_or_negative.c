@@ -6,7 +6,7 @@
 
 /**
 
- * main - Entry point
+ * main - main function to generate a random number 
 
  *
 
@@ -57,4 +57,3 @@ return (0);
 
 
 
-========================================
