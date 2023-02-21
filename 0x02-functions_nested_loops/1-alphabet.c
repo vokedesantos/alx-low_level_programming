@@ -1,11 +1,21 @@
-#include "main.h"
+#include &quot;main.h&quot;
+
 /**
- * print_alphabelt - print all alphabelt in lowercase
- */
-void print_alphabelt(void)
+
+* print_alphabet - print all alphabet in lowercase
+
+*/
+
+void print_alphabet(void)
+
 {
-	char letter;
-	for (letter = 'a'; letter <= 'z'; letter++)
-		_putchar(letter);
-	_putchar('/n');
+
+char letter;
+
+for (letter = &#39;a&#39;; letter &lt;= &#39;z&#39;; letter++)
+
+_putchar(letter);
+
+_putchar(&#39;\n&#39;);
+
 }
