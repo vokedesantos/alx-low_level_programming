@@ -1,17 +1,23 @@
-#include "main.h"
+#include <stdio.h>
 
 /**
- * print_alphabet_x10 - Prints the alphabet 10 times, in lowercase.
+ * print_to_98 - Prints all natural numbers from input to 98,
+ *               in order separated by a comma followed by a space.
+ * @n: The starting point of counting.
  */
-void print_alphabet_x10(void)
+void print_to_98(int n)
 {
-	int count = 0;
-	char alpha;
-
-	while (count++ <= 9)
+	if (n >= 98)
 	{
-		for (alpha = 'a'; alpha <= 'z'; alpha++)
-			_putchar(alpha);
-		_putchar('\n');
+		while (n > 98)
+			printf("%d, ", n--);
+		printf("%d\n", n);
+	}
+
+	else
+	{
+		while (n < 98)
+			printf("%d, ", n++);
+		printf("%d\n", n);
 	}
 }
