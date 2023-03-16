@@ -1,19 +1,43 @@
+#include <stdlib.h>
+		
 #include "main.h"
-/**
- * _puts_recursion - function like puts();
- * @s: input
- * Return: Always 0 (Success)
- */
-void _puts_recursion(char *s)
-{
-	if (*s)
-	{
-		_putchar(*s);
-		_puts_recursion(s + 1);
-	}
+		
 
-	else
-		_putchar('\n');
+		
+/**
+		
+ * *malloc_checked - allocates memory using malloc
+		
+ * @b: number of bytes to allocate
+		
+ *
+		
+ * Return: a pointer to the allocated memory
+		
+ */
+		
+void *malloc_checked(unsigned int b)
+		
+{
+		
+	void *ptr;
+		
+
+		
+	ptr = malloc(b);
+		
+
+		
+	if (ptr == NULL)
+		
+		exit(98);
+		
+
+		
+	return (ptr);
+		
 }
+
+
 
 
