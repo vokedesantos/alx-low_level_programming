@@ -1,18 +1,60 @@
+#include <stdlib.h>
+		
 #include "main.h"
+		
 
+		
 /**
- * factorial - returns the factorial of a number
- * @n: number to return the factorial from
+		
+ * *array_range - creates an array of integers
+		
+ * @min: minimum range of values stored
+		
+ * @max: maximum range of values stored and number of elements
+		
  *
- * Return: factorial of n
+		
+ * Return: pointer to the new array
+		
  */
-int factorial(int n)
+		
+int *array_range(int min, int max)
+		
 {
-	if (n < 0)
-		return (-1);
-	if (n == 0)
-		return (1);
-	return (n * factorial(n - 1));
-}
+		
+	int *ptr;
+		
+	int i, size;
+		
 
+		
+	if (min > max)
+		
+		return (NULL);
+		
+
+		
+	size = max - min + 1;
+		
+
+		
+	ptr = malloc(sizeof(int) * size);
+		
+
+		
+	if (ptr == NULL)
+		
+		return (NULL);
+		
+
+		
+	for (i = 0; min <= max; i++)
+		
+		ptr[i] = min++;
+		
+
+		
+	return (ptr);
+		
+}
 
