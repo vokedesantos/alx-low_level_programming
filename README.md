@@ -1,20 +1,68 @@
-C - Structures, typedef TASKS 0. Poppy Define a new type struct dog with the following elements:
-name, type = char *
-age, type = float
-owner, type = char *
-A dog is the only thing on earth that loves you more than you love yourself Write a function that initialize a variable of type struct dog
-Prototype: void init_dog(struct dog *d, char *name, float age, char *owner);
-A dog will teach you unconditional love. If you can have that in your life, things won't be too bad Write a function that prints a struct dog
-Prototype: void print_dog(struct dog *d);
-Format: see example bellow
-You are allowed to use the standard library
-If an element of d is NULL, print (nil) instead of this element. (if name is NULL, print Name: (nil))
-If d is NULL print nothing.
-Outside of a dog, a book is a man's best friend. Inside of a dog it's too dark to read Define a new type dog_t as a new name for the type struct dog.
-A door is what a dog is perpetually on the wrong side of Write a function that creates a new dog.
-Prototype: dog_t *new_dog(char *name, float age, char *owner);
-You have to store a copy of name and owner
-Return NULL if the function fails
-How many legs does a dog have if you call his tail a leg? Four. Saying that a tail is a leg doesn't make it a leg Write a function that frees dogs.
-Prototype: void free_dog(dog_t *d);
+julien@ubuntu:~/0x12. Singly linked lists$ cat 1-main.c
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include "lists.h"
+
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+    list_t *head;
+    list_t *new;
+    list_t hello = {"World", 5, NULL};
+    size_t n;
+
+    head = &hello;
+    new = malloc(sizeof(list_t));
+    if (new == NULL)
+    {
+        printf("Error\n");
+        return (1);
+    }
+    new->str = strdup("Hello");
+    new->len = 5;
+    new->next = head;
+    head = new;
+    n = list_len(head);
+    printf("-> %lu elements\n", n);
+    free(new->str);
+    free(new);
+    return (0);
+}
+julien@ubuntu:~/0x12. Singly linked lists$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 1-main.c 1-list_len.c -o b
+julien@ubuntu:~/0x12. Singly linked lists$ ./b 
+-> 2 elements
+julien@ubuntu:~/0x12. Singly linked lists$ 
+Repo:
+
+GitHub repository: alx-low_level_programming
+Directory: 0x12-singly_linked_lists
+File: 1-list_len.c
+  
+2. Add node
+mandatory
+Write a function that adds a new node at the beginning of a list_t list.
+
+Prototype: list_t *add_node(list_t **head, const char *str);
+Return: the address of the new element, or NULL if it failed
+str needs to be duplicated
+You are allowed to use strdup
+julien@ubuntu:~/0x12. Singly linked lists$ cat 2-main.c
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include "lists.h"
+
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+    list_t *head;
 
