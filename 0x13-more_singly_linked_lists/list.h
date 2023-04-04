@@ -8,7 +8,7 @@
 
 /**
  * struct listint_s 
- * @d:data
+ * @n:data
  * @link:contains the address of the next node of the list
  *
  * Description:single linked list made up of nodes for ALX project
